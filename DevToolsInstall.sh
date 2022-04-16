@@ -49,12 +49,12 @@ if [ "$answer" = "y" ]; then
     sudo rm Python-3.10.3.tgz 
     python3.10 -V ;
     pip3.10 -V;
-    sudo dnf install -y openjdk-11-jdk
+    sudo dnf install -y java-11-openjdk-devel.x86_64
     sudo dnf install -y qemu-kvm bridge-utils libvirt virt-install;
     sudo dnf install -y snapd;
     sudo ln -s /var/lib/snapd/snap /snap;
-    sudo snap install -y core && sudo snap refresh core;
-    sudo snap install -y android-studio --classic
+    sudo snap install core && sudo snap refresh core;
+    sudo snap install android-studio --classic
     sudo dnf -y install dotnet-sdk-6.0;
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc;
     sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo';
